@@ -1,9 +1,9 @@
 ## /* @config
 #   @description
-#   Variables are set to general style and color references, and then gitscripts-specific
-#   tags are defined. It is not recommended to override the first block of definitions
-#   as they are objectively set, but the second and third block of definitions
-#   can be overridden in user.overrides to fit your own personal style.
+#   Variables are set to general style and color references. It is not
+#   recommended to override the first block of definitions as they are
+#   objectively set, but the second and third block of definitions
+#   can be overridden in user.colors.sh to fit your own personal style.
 #   description@
 ## */
 
@@ -15,6 +15,7 @@ PRE=$'\033['
 [ -n "${CFG_NORM}" ]        || CFG_NORM=0
 [ -n "${CFG_BRIGHT}" ]      || CFG_BRIGHT=1
 [ -n "${CFG_DIM}" ]         || CFG_DIM=2
+
 # foreground
 [ -n "${CFG_BLACK}" ]       || CFG_BLACK=30
 [ -n "${CFG_RED}" ]         || CFG_RED=31
@@ -24,6 +25,7 @@ PRE=$'\033['
 [ -n "${CFG_MAGENTA}" ]     || CFG_MAGENTA=35
 [ -n "${CFG_CYAN}" ]        || CFG_CYAN=36
 [ -n "${CFG_WHITE}" ]       || CFG_WHITE=37
+
 # background
 [ -n "${CFG_BG_BLACK}" ]    || CFG_BG_BLACK=40
 [ -n "${CFG_BG_RED}" ]      || CFG_BG_RED=41

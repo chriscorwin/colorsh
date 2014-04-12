@@ -1,0 +1,26 @@
+# get path to this script
+if [ "x${colorsh_path}" = "x" ]; then
+    # determine the path to this script. it will become the gitscripts path. the cfg directory
+    # must live in the same directory as this script for any user overrides to take effect.
+    colorsh_path="${BASH_SOURCE[0]}"
+    if [ -h "${colorsh_path}" ]; then
+        while [ -h "${colorsh_path}" ]; do
+            colorsh_path=`readlink "${colorsh_path}"`
+        done
+    fi
+    pushd . > /dev/null
+    cd `dirname ${colorsh_path}` > /dev/null
+    export colorsh_path=`pwd`;
+    popd  > /dev/null
+fi
+
+
+# source main script if it exists, and try to
+# source user script after that
+if [ -f "${colorsh_path}/colors.sh" ]; then
+    . "${colorsh_path}/colors.sh"
+
+    if [ -f "${colorsh_path}/user.colors.sh" ]; then
+        . "${colorsh_path}/user.colors.sh"
+    fi
+fi

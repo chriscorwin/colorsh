@@ -47,7 +47,6 @@ PRE=$'\033['
 [ -n "${COL_MAGENTA}" ]     || export COL_MAGENTA="${PRE}${CFG_MAGENTA}m"
 [ -n "${COL_CYAN}" ]        || export COL_CYAN="${PRE}${CFG_CYAN}m"
 [ -n "${COL_WHITE}" ]       || export COL_WHITE="${PRE}${CFG_WHITE}m"
-[ -n "${COL_NORM}" ]        || export COL_NORM="${PRE}${CFG_NORM}m"
 
 # color style shortcuts and reset
 [ -n "${X}" ]               || export X=${STYLE_NORM}

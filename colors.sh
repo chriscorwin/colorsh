@@ -41,7 +41,8 @@ PRE=$'\033['
 [ -n "${STYLE_NORM}" ]      || export STYLE_NORM="${PRE}${CFG_NORM}m"
 [ -n "${STYLE_DIM}" ]       || export STYLE_DIM="${PRE}${CFG_DIM}m"
 
-# colors
+# foreground colors
+[ -n "${COL_BLACK}" ]       || export COL_BLACK="${PRE}${CFG_BLACK}m"
 [ -n "${COL_RED}" ]         || export COL_RED="${PRE}${CFG_RED}m"
 [ -n "${COL_GREEN}" ]       || export COL_GREEN="${PRE}${CFG_GREEN}m"
 [ -n "${COL_YELLOW}" ]      || export COL_YELLOW="${PRE}${CFG_YELLOW}m"
@@ -50,8 +51,23 @@ PRE=$'\033['
 [ -n "${COL_CYAN}" ]        || export COL_CYAN="${PRE}${CFG_CYAN}m"
 [ -n "${COL_WHITE}" ]       || export COL_WHITE="${PRE}${CFG_WHITE}m"
 
-# color style shortcuts and reset
+# background colors
+[ -n "${BG_BLACK}" ]        || export BG_BLACK="${PRE}${CFG_BG_BLACK}m"
+[ -n "${BG_RED}" ]          || export BG_RED="${PRE}${CFG_BG_RED}m"
+[ -n "${BG_GREEN}" ]        || export BG_GREEN="${PRE}${CFG_BG_GREEN}m"
+[ -n "${BG_YELLOW}" ]       || export BG_YELLOW="${PRE}${CFG_BG_YELLOW}m"
+[ -n "${BG_BLUE}" ]         || export BG_BLUE="${PRE}${CFG_BG_BLUE}m"
+[ -n "${BG_MAGENTA}" ]      || export BG_MAGENTA="${PRE}${CFG_BG_MAGENTA}m"
+[ -n "${BG_CYAN}" ]         || export BG_CYAN="${PRE}${CFG_BG_CYAN}m"
+[ -n "${BG_WHITE}" ]        || export BG_WHITE="${PRE}${CFG_BG_WHITE}m"
+
+# color reset
 [ -n "${X}" ]               || export X=${STYLE_NORM}
-# [ -n "${B}" ]               || export B=${STYLE_BRIGHT}
-# [ -n "${N}" ]               || export N=${STYLE_NORM}
-# [ -n "${D}" ]               || export D=${STYLE_DIM}
+# bold or bright
+[ -n "${B}" ]               || export B=${STYLE_BRIGHT}
+# "dimmed" or de-emphasized
+[ -n "${D}" ]               || export D=${STYLE_DIM}
+# warn styling
+[ -n "${W}" ]               || export W=${X}${BG_YELLOW}${COL_BLACK}
+# error styling
+[ -n "${E}" ]               || export E=${X}${BG_RED}${COL_WHITE}

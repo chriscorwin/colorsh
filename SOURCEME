@@ -24,3 +24,6 @@ if [ -f "${colorsh_path}/colors.sh" ]; then
         . "${colorsh_path}/user.colors.sh"
     fi
 fi
+
+
+echo "${B}${COL_MAGENTA}colorsh loaded.${X}"
